@@ -41,6 +41,7 @@ public class WakeUpControl {
     public WakeUpControl(Context context, IWakeupListener eventListener) {
         this(context,new WakeupEventAdapter(eventListener));
     }
+
     public void start(Map<String, Object> params) {
         String json = new JSONObject(params).toString();
         LogUtil.info(TAG + ".Debug", "wakeup params(反馈请带上此行日志):" + json);
