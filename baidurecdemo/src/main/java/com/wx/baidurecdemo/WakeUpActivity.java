@@ -1,7 +1,6 @@
 package com.wx.baidurecdemo;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,7 +12,7 @@ import com.wx.baidurecdemo.wakeup.WakeupParams;
 import java.util.Map;
 
 public class WakeUpActivity extends CommonActivity implements IStatus{
-
+private static String TAG = "WakeUpActivity";
     private Button btnStart;
 
     {
@@ -23,25 +22,32 @@ public class WakeUpActivity extends CommonActivity implements IStatus{
     private static int mStatus = STATUS_NONE;
     protected WakeUpControl myWakeup;
 
+
     @Override
     protected void onResume() {
+        Log.d(TAG, "onResume: --------start");
         super.onResume();
         if(mStatus == STATUS_NONE) {
             startRecog();
             btnStart.performClick();
         }
+        Log.d(TAG, "onResume: --------end");
     }
 
     @Override
     protected void initRecog() {
+        Log.d(TAG, "initRecog:-------------start");
         IWakeupListener listener = new MyWeakUpListener();
         myWakeup = new WakeUpControl(this,listener);
+        Log.d(TAG, "initRecog:-------------end");
     }
     private void startRecog() {
+        Log.d(TAG, "startRecog: ------------------------------start");
         WakeupParams wakeupParams = new WakeupParams(this);
         Map<String,Object> params = wakeupParams.fetch();
         myWakeup.start(params);
         mStatus = STATUS_WAITING_READY;
+        Log.d(TAG, "startRecog: ------------------------------end");
     }
 
     @Override

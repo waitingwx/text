@@ -1,1 +1,1 @@
-include ':app', ':baidurecdemo'
+include ':app', ':baidurecdemo', ':kdxfdemo'
