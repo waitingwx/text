@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d427f232aa487558eef1aab82bb41758c71065c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5e4eee267e3c4a6f8802d4e0861d4310d5e3317e">
+        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_551d95acd54dfaf4b86adc490c1629c9e44be2d9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wx/Public/gitclone/text/kdxfdemo/libs/Sunflower.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dffa0220b64d2017db2517325926313c5f186d73">
+        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/2/Sunflower_1d0b2a76dce6636213b99301ed0410626b99667d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wx/Public/gitclone/text/kdxfdemo/libs/Msc.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d6fd5a65ae8ef3535dfbf3284ad4c1adb5a40e88">
+        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/2/Msc_75185492a18b0fd1d4a4d4ce8583be41528bb556/classes.dex" />
+    </item>
+
+</items>

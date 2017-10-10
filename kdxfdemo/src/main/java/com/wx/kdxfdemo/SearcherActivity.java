@@ -1,8 +1,12 @@
 package com.wx.kdxfdemo;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -57,7 +61,7 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
             + "/msc/test";
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
-    private int curThresh = 60;
+    private int curThresh = -20;
     private Button btnStatus;
     private int mStatus = STATUS_STOPPED;
     boolean isSuss = false;
@@ -76,7 +80,7 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
         // 初始化唤醒对象
         mivwVoiceWakeuper = VoiceWakeuper.createWakeuper(this, null);
         // 初始化识别对象---唤醒+识别,用来构建语法
-        mAsrSpeechRecog = SpeechRecognizer.createRecognizer(this, mInitListener);
+        mAsrSpeechRecog = SpeechRecognizer.createRecognizer(this, null);
         // 初始化语法文件
         mCloudGrammar = readFile(this, "launch_voice_recog.abnf", "utf-8");
         mLocalGrammar = readFile(this, "wake.bnf", "utf-8");
@@ -91,7 +95,6 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
             public void onClick(View v) {
                 switch (mStatus) {
                     case STATUS_READY:
-
                         stopShot();
                         break;
                     case STATUS_STOPPED:
@@ -255,8 +258,31 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
             }
         }
     };
+    private void requestPermissions(){
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                int permission = ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if(permission!= PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this,new String[] {
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.LOCATION_HARDWARE,Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_SETTINGS,Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS},0x0010);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     void startShot() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions();
+
+        } else {
+
         // 非空判断，防止因空指针使程序崩溃
         mivwVoiceWakeuper = VoiceWakeuper.getWakeuper();
         if (null != mivwVoiceWakeuper && null != mAsrSpeechRecog) {
@@ -294,9 +320,6 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
                     mivwVoiceWakeuper.setParameter(SpeechConstant.CLOUD_GRAMMAR,
                             mCloudGrammarID);
                     mivwVoiceWakeuper.startListening(mWakeuperListener);//开始唤醒监听
-                    
-                    mAsrSpeechRecog.startListening(mRecognizerListener);//开始语法识别监听
-                    
                     mStatus = STATUS_READY;
                     btnStatus.setText(R.string.btn_statusb);
                 } else {
@@ -320,7 +343,7 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
 
         } else {
             showTip("唤醒未初始化");
-        }
+        }}
     }
 
     // 获取识别资源路径
@@ -342,70 +365,13 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
         } else {
             showTip("唤醒未初始化");
         }
+        mAsrSpeechRecog = SpeechRecognizer.getRecognizer();
+        if(null != mAsrSpeechRecog) {
+            mAsrSpeechRecog.destroy();
+        }else {
+            showTip("识别未初始化");
+        }
     }
-    private RecognizerListener mRecognizerListener = new RecognizerListener() {
-
-        @Override
-        public void onVolumeChanged(int volume, byte[] data) {
-            showTip("当前正在说话，音量大小：" + volume);
-            Log.d(TAG, "返回音频数据："+data.length);
-            showAnimate(volume);
-        }
-
-        @Override
-        public void onResult(final RecognizerResult result, boolean isLast) {
-            if (null != result && !TextUtils.isEmpty(result.getResultString())) {
-                Log.d(TAG, "recognizer result：" + result.getResultString());
-                String text = "";
-                if (mResultType.equals("json")) {
-                    text = JsonParser.parseGrammarResult(result.getResultString(), mEngineType);
-                    switch (text) {
-                        case "搜索":
-                            Log.d(TAG, "onResult: -----TODO:跳转搜索！！！");
-                            break;
-                        case "查看":
-                            break;
-                        case "识别":
-                            break;
-                    }
-                } else if (mResultType.equals("xml")) {
-                    text = XmlParser.parseNluResult(result.getResultString());
-                }
-                // 显示
-                ((EditText) findViewById(R.id.et_recog_result)).setText(text);
-            } else {
-                Log.d(TAG, "recognizer result : null");
-            }
-        }
-
-        @Override
-        public void onEndOfSpeech() {
-            // 此回调表示：检测到了语音的尾端点，已经进入识别过程，不再接受语音输入
-            showTip("结束说话");
-        }
-
-        @Override
-        public void onBeginOfSpeech() {
-            // 此回调表示：sdk内部录音机已经准备好了，用户可以开始语音输入
-            showTip("开始说话");
-        }
-
-        @Override
-        public void onError(SpeechError error) {
-            showTip("onError Code："	+ error.getErrorCode());
-        }
-
-        @Override
-        public void onEvent(int eventType, int arg1, int arg2, Bundle obj) {
-            // 以下代码用于获取与云端的会话id，当业务出错时将会话id提供给技术支持人员，可用于查询会话日志，定位出错原因
-            // 若使用本地能力，会话id为null
-            //	if (SpeechEvent.EVENT_SESSION_ID == eventType) {
-            //		String sid = obj.getString(SpeechEvent.KEY_EVENT_SESSION_ID);
-            //		Log.d(TAG, "session id =" + sid);
-            //	}
-        }
-
-    };
 
     private void showAnimate(int volume) {
         

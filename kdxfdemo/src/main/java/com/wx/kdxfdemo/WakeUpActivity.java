@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -180,10 +181,21 @@ public class WakeUpActivity extends AppCompatActivity implements Istatus {
         }
     };
 
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        Log.d(TAG, "onDestroy WakeDemo");
+//        // 销毁合成对象
+//        mIvw = VoiceWakeuper.getWakeuper();
+//        if (mIvw != null) {
+//            mIvw.destroy();
+//        }
+//    }
+
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy WakeDemo");
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop ");
         // 销毁合成对象
         mIvw = VoiceWakeuper.getWakeuper();
         if (mIvw != null) {
@@ -224,4 +236,14 @@ public class WakeUpActivity extends AppCompatActivity implements Istatus {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == 0x0010){
+            for (int i = 0; i < permissions.length; i++) {
+                int grantResult = grantResults[i];
+                Log.d(TAG, "onRequestPermissionsResult: grantResult=" +grantResult);
+            }
+        }
+    }
 }

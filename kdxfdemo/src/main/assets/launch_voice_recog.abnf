@@ -3,7 +3,7 @@ language zh-CN;
 mode voice;
 
 root $main;
-$main = $name;
+$main = [$call] $name;
 $call = 语音启动;
 $name = 搜索|查看|识别;
 
