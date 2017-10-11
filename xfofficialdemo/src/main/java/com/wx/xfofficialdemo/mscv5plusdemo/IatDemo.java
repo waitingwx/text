@@ -101,88 +101,112 @@ public class IatDemo extends Activity implements OnClickListener{
 		// 开始听写
 		// 如何判断一次听写结束：OnResult isLast=true 或者 onError
 		case R.id.iat_recognize:
-			mResultText.setText(null);// 清空显示内容
-			mIatResults.clear();
-			// 设置参数
-			setParam();
-			boolean isShowDialog = mSharedPreferences.getBoolean(getString(R.string.pref_key_iat_show), true);
-			if (isShowDialog) {
-				// 显示听写对话框
-				mIatDialog.setListener(mRecognizerDialogListener);
-				mIatDialog.show();
-				showTip(getString(R.string.text_begin));
-			} else {
-				// 不显示听写对话框
-				ret = mIat.startListening(mRecognizerListener);
-				if (ret != ErrorCode.SUCCESS) {
-					showTip("听写失败,错误码：" + ret);
-				} else {
-					showTip(getString(R.string.text_begin));
-				}
-			}
+			startRecog();
 			break;
 		// 音频流识别
 		case R.id.iat_recognize_stream:
-			mResultText.setText(null);// 清空显示内容
-			mIatResults.clear();
-			// 设置参数
-			setParam();
-			// 设置音频来源为外部文件
-			mIat.setParameter(SpeechConstant.AUDIO_SOURCE, "-1");
-			// 也可以像以下这样直接设置音频文件路径识别（要求设置文件在sdcard上的全路径）：
-			// mIat.setParameter(SpeechConstant.AUDIO_SOURCE, "-2");
-			// mIat.setParameter(SpeechConstant.ASR_SOURCE_PATH, "sdcard/XXX/XXX.pcm");
-			ret = mIat.startListening(mRecognizerListener);
-			if (ret != ErrorCode.SUCCESS) {
-				showTip("识别失败,错误码：" + ret);
-			} else {
-				byte[] audioData = FucUtil.readAudioFile(IatDemo.this, "iattest.wav");
-				
-				if (null != audioData) {
-					showTip(getString(R.string.text_begin_recognizer));
-					// 一次（也可以分多次）写入音频文件数据，数据格式必须是采样率为8KHz或16KHz（本地识别只支持16K采样率，云端都支持），位长16bit，单声道的wav或者pcm
-					// 写入8KHz采样的音频时，必须先调用setParameter(SpeechConstant.SAMPLE_RATE, "8000")设置正确的采样率
-					// 注：当音频过长，静音部分时长超过VAD_EOS将导致静音后面部分不能识别
-					mIat.writeAudio(audioData, 0, audioData.length);
-					mIat.stopListening();
-				} else {
-					mIat.cancel();
-					showTip("读取音频流失败");
-				}
-			}
+			startSteamRecog();
 			break;
 		// 停止听写
 		case R.id.iat_stop:
-			mIat.stopListening();
-			showTip("停止听写");
+			stopRecog();
 			break;
 		// 取消听写
 		case R.id.iat_cancel:
-			mIat.cancel();
-			showTip("取消听写");
+			cancelRecog();
 			break;
 		// 上传联系人
 		case R.id.iat_upload_contacts:
-			showTip(getString(R.string.text_upload_contacts));
-			ContactManager mgr = ContactManager.createManager(IatDemo.this, mContactListener);	
-			mgr.asyncQueryAllContactsName();
+			uploadContacts();
 			break;
 			// 上传用户词表
 		case R.id.iat_upload_userwords:
-			showTip(getString(R.string.text_upload_userwords));
-			String contents = FucUtil.readFile(IatDemo.this, "userwords","utf-8");
-			mResultText.setText(contents);
-			// 指定引擎类型
-			mIat.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD);
-			// 置编码类型
-			mIat.setParameter(SpeechConstant.TEXT_ENCODING, "utf-8");
-			ret = mIat.updateLexicon("userword", contents, mLexiconListener);
-			if (ret != ErrorCode.SUCCESS)
-				showTip("上传热词失败,错误码：" + ret);
+			uploadUserWords();
 			break;
 		default:
 			break;
 		}
+	}
+
+	private void uploadUserWords() {
+		showTip(getString(R.string.text_upload_userwords));
+		String contents = FucUtil.readFile(IatDemo.this, "userwords","utf-8");
+		mResultText.setText(contents);
+		// 指定引擎类型
+		mIat.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD);
+		// 置编码类型
+		mIat.setParameter(SpeechConstant.TEXT_ENCODING, "utf-8");
+		ret = mIat.updateLexicon("userword", contents, mLexiconListener);
+		if (ret != ErrorCode.SUCCESS)
+            showTip("上传热词失败,错误码：" + ret);
+	}
+
+	private void uploadContacts() {
+		showTip(getString(R.string.text_upload_contacts));
+		ContactManager mgr = ContactManager.createManager(IatDemo.this, mContactListener);
+		mgr.asyncQueryAllContactsName();
+	}
+
+	private void cancelRecog() {
+		mIat.cancel();
+		showTip("取消听写");
+	}
+
+	private void stopRecog() {
+		mIat.stopListening();
+		showTip("停止听写");
+	}
+
+	private void startSteamRecog() {
+		mResultText.setText(null);// 清空显示内容
+		mIatResults.clear();
+		// 设置参数
+		setParam();
+		// 设置音频来源为外部文件
+		mIat.setParameter(SpeechConstant.AUDIO_SOURCE, "-1");
+		// 也可以像以下这样直接设置音频文件路径识别（要求设置文件在sdcard上的全路径）：
+		// mIat.setParameter(SpeechConstant.AUDIO_SOURCE, "-2");
+		// mIat.setParameter(SpeechConstant.ASR_SOURCE_PATH, "sdcard/XXX/XXX.pcm");
+		ret = mIat.startListening(mRecognizerListener);
+		if (ret != ErrorCode.SUCCESS) {
+            showTip("识别失败,错误码：" + ret);
+        } else {
+            byte[] audioData = FucUtil.readAudioFile(IatDemo.this, "iattest.wav");
+
+            if (null != audioData) {
+                showTip(getString(R.string.text_begin_recognizer));
+                // 一次（也可以分多次）写入音频文件数据，数据格式必须是采样率为8KHz或16KHz（本地识别只支持16K采样率，云端都支持），位长16bit，单声道的wav或者pcm
+                // 写入8KHz采样的音频时，必须先调用setParameter(SpeechConstant.SAMPLE_RATE, "8000")设置正确的采样率
+                // 注：当音频过长，静音部分时长超过VAD_EOS将导致静音后面部分不能识别
+                mIat.writeAudio(audioData, 0, audioData.length);
+                mIat.stopListening();
+            } else {
+                mIat.cancel();
+                showTip("读取音频流失败");
+            }
+        }
+	}
+
+	private void startRecog() {
+		mResultText.setText(null);// 清空显示内容
+		mIatResults.clear();
+		// 设置参数
+		setParam();
+		boolean isShowDialog = mSharedPreferences.getBoolean(getString(R.string.pref_key_iat_show), true);
+		if (isShowDialog) {
+            // 显示听写对话框
+            mIatDialog.setListener(mRecognizerDialogListener);
+            mIatDialog.show();
+            showTip(getString(R.string.text_begin));
+        } else {
+            // 不显示听写对话框
+            ret = mIat.startListening(mRecognizerListener);
+            if (ret != ErrorCode.SUCCESS) {
+                showTip("听写失败,错误码：" + ret);
+            } else {
+                showTip(getString(R.string.text_begin));
+            }
+        }
 	}
 
 	/**
