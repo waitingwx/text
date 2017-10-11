@@ -1,7 +1,4 @@
-package com.iflytek.mscv5plusdemo;
-
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -29,9 +26,13 @@ import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
 import com.iflytek.cloud.util.ContactManager;
 import com.iflytek.cloud.util.ContactManager.ContactListener;
-import com.iflytek.speech.setting.IatSettings;
-import com.iflytek.speech.util.FucUtil;
-import com.iflytek.speech.util.JsonParser;
+import com.wx.xfofficialdemo.R;
+import com.wx.xfofficialdemo.speech.setting.IatSettings;
+import com.wx.xfofficialdemo.speech.util.FucUtil;
+import com.wx.xfofficialdemo.speech.util.JsonParser;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class IatDemo extends Activity implements OnClickListener{
 	private static String TAG = "IatDemo";

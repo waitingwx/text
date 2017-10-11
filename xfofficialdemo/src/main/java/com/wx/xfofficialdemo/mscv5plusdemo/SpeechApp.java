@@ -1,9 +1,10 @@
-package com.iflytek.mscv5plusdemo;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.app.Application;
 
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
+import com.wx.xfofficialdemo.R;
 
 public class SpeechApp extends Application{
   

@@ -1,4 +1,4 @@
-package com.iflytek.mscv5plusdemo;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,8 +14,6 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.json.JSONObject;
-
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.SpeechConstant;
@@ -25,7 +23,10 @@ import com.iflytek.cloud.SpeechUnderstanderListener;
 import com.iflytek.cloud.TextUnderstander;
 import com.iflytek.cloud.TextUnderstanderListener;
 import com.iflytek.cloud.UnderstanderResult;
-import com.iflytek.speech.setting.UnderstanderSettings;
+import com.wx.xfofficialdemo.R;
+import com.wx.xfofficialdemo.speech.setting.UnderstanderSettings;
+
+import org.json.JSONObject;
 
 public class UnderstanderDemo extends Activity implements OnClickListener {
 	private static String TAG = UnderstanderDemo.class.getSimpleName();

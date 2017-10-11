@@ -1,4 +1,4 @@
-package com.iflytek.mscv5plusdemo;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -29,9 +29,10 @@ import com.iflytek.cloud.util.ContactManager;
 import com.iflytek.cloud.util.ContactManager.ContactListener;
 import com.iflytek.cloud.util.ResourceUtil;
 import com.iflytek.cloud.util.ResourceUtil.RESOURCE_TYPE;
-import com.iflytek.speech.util.FucUtil;
-import com.iflytek.speech.util.JsonParser;
-import com.iflytek.speech.util.XmlParser;
+import com.wx.xfofficialdemo.R;
+import com.wx.xfofficialdemo.speech.util.FucUtil;
+import com.wx.xfofficialdemo.speech.util.JsonParser;
+import com.wx.xfofficialdemo.speech.util.XmlParser;
 
 public class AsrDemo extends Activity implements OnClickListener{
 	private static String TAG = AsrDemo.class.getSimpleName();

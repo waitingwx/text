@@ -1,4 +1,4 @@
-package com.iflytek.speech.util;
+package com.wx.xfofficialdemo.speech.util;
 
 import java.util.regex.Pattern;
 import android.content.Context;

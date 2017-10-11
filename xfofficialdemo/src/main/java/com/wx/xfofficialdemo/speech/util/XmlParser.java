@@ -1,4 +1,4 @@
-package com.iflytek.speech.util;
+package com.wx.xfofficialdemo.speech.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

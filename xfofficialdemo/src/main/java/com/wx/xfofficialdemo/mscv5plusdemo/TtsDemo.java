@@ -1,4 +1,4 @@
-package com.iflytek.mscv5plusdemo;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -25,7 +25,8 @@ import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SynthesizerListener;
 import com.iflytek.cloud.util.ResourceUtil;
 import com.iflytek.cloud.util.ResourceUtil.RESOURCE_TYPE;
-import com.iflytek.speech.setting.TtsSettings;
+import com.wx.xfofficialdemo.R;
+import com.wx.xfofficialdemo.speech.setting.TtsSettings;
 
 public class TtsDemo extends Activity implements OnClickListener {
 	private static String TAG = TtsDemo.class.getSimpleName(); 	
@@ -306,7 +307,6 @@ public class TtsDemo extends Activity implements OnClickListener {
 
 	/**
 	 * 参数设置
-	 * @param param
 	 * @return 
 	 */
 	private void setParam(){

@@ -3,39 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="D:\an_workspace\AllTestDemo\xfofficialdemo\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d427f232aa487558eef1aab82bb41758c71065c4/classes.dex" />
+        revision="26.0.1"
+        sha1="d06bfa1cab303d72e43fc76df2d9c698411bf377">
+        <dex dex="D:\an_workspace\AllTestDemo\xfofficialdemo\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2bbff2240b446bf6fa251a187f8f01570b21249f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="D:\an_workspace\AllTestDemo\xfofficialdemo\libs\Msc.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.2"
-        sha1="5e4eee267e3c4a6f8802d4e0861d4310d5e3317e">
-        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_551d95acd54dfaf4b86adc490c1629c9e44be2d9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/kdxfdemo/libs/Sunflower.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="dffa0220b64d2017db2517325926313c5f186d73">
-        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/2/Sunflower_1d0b2a76dce6636213b99301ed0410626b99667d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/kdxfdemo/libs/Msc.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
+        revision="26.0.1"
         sha1="d6fd5a65ae8ef3535dfbf3284ad4c1adb5a40e88">
-        <dex dex="/Users/wx/Public/gitclone/text/kdxfdemo/build/intermediates/transforms/dex/debug/folders/1000/2/Msc_75185492a18b0fd1d4a4d4ce8583be41528bb556/classes.dex" />
+        <dex dex="D:\an_workspace\AllTestDemo\xfofficialdemo\build\intermediates\transforms\dex\debug\folders\1000\2\Msc_16b2d66540dfcf0709c892a3c329a49fdf3ac904\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\an_workspace\AllTestDemo\xfofficialdemo\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\an_workspace\AllTestDemo\xfofficialdemo\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_698cb10748b400f9c503e8fc2f887b419c8e4144\classes.dex" />
     </item>
 
 </items>

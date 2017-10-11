@@ -1,4 +1,4 @@
-package com.iflytek.mscv5plusdemo;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -17,6 +17,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.wx.xfofficialdemo.R;
 
 public class MainActivity extends Activity implements OnClickListener{
 

@@ -1,8 +1,4 @@
-package com.iflytek.mscv5plusdemo;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
+package com.wx.xfofficialdemo.mscv5plusdemo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -30,6 +26,11 @@ import com.iflytek.cloud.WakeuperResult;
 import com.iflytek.cloud.util.FileDownloadListener;
 import com.iflytek.cloud.util.ResourceUtil;
 import com.iflytek.cloud.util.ResourceUtil.RESOURCE_TYPE;
+import com.wx.xfofficialdemo.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 public class WakeDemo extends Activity implements OnClickListener {
 	private String TAG = "ivw";

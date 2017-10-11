@@ -1,4 +1,4 @@
-package com.iflytek.speech.setting;
+package com.wx.xfofficialdemo.speech.setting;
 
 import android.os.Bundle;
 import android.preference.EditTextPreference;
@@ -7,8 +7,8 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.view.Window;
 
-import com.iflytek.speech.util.SettingTextWatcher;
-import com.iflytek.mscv5plusdemo.R;
+import com.wx.xfofficialdemo.R;
+import com.wx.xfofficialdemo.speech.util.SettingTextWatcher;
 
 
 /**
