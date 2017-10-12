@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.GrammarListener;
 import com.iflytek.cloud.InitListener;
-import com.iflytek.cloud.RecognizerListener;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
@@ -30,7 +29,6 @@ import com.iflytek.cloud.WakeuperResult;
 import com.iflytek.cloud.util.ResourceUtil;
 import com.wx.kdxfdemo.Constants.Istatus;
 import com.wx.kdxfdemo.speech.util.JsonParser;
-import com.wx.kdxfdemo.speech.util.XmlParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -110,7 +108,7 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
         if (mivwVoiceWakeuper != null) {
             mivwVoiceWakeuper.stopListening();
             mStatus = STATUS_STOPPED;
-            btnStatus.setText(R.string.btn_statusa);
+            btnStatus.setText(R.string.btn_status_start);
         } else {
             showTip("唤醒未初始化");
         }
@@ -321,7 +319,7 @@ public class SearcherActivity extends AppCompatActivity implements Istatus {
                             mCloudGrammarID);
                     mivwVoiceWakeuper.startListening(mWakeuperListener);//开始唤醒监听
                     mStatus = STATUS_READY;
-                    btnStatus.setText(R.string.btn_statusb);
+                    btnStatus.setText(R.string.btn_status_cancel);
                 } else {
                     showTip("请先构建语法");
                 }

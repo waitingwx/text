@@ -8,7 +8,7 @@
 <Button
     android:layout_width="0dp"
     android:layout_height="60dp"
-    android:text="@string/btn_statusa"
+    android:text="@string/btn_status_start"
     android:textSize="30sp"
     android:layout_gravity="center_horizontal"
     app:layout_constraintBottom_toBottomOf="parent"

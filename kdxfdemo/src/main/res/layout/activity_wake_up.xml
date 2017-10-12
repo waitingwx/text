@@ -13,7 +13,7 @@
     android:layout_marginLeft="8dp"
     app:layout_constraintLeft_toLeftOf="parent"
     android:layout_marginRight="8dp"
-    android:text="@string/btn_statusa"
+    android:text="@string/btn_status_start"
     android:id="@+id/btn_status"
     android:textSize="30sp"
     app:layout_constraintRight_toRightOf="parent"

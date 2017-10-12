@@ -51,8 +51,7 @@ public class IatDemo extends Activity implements OnClickListener{
 	private boolean mTranslateEnable = false;
 	
 	@SuppressLint("ShowToast")
-	public void onCreate(Bundle savedInstanceState)
-	{
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.iatdemo);

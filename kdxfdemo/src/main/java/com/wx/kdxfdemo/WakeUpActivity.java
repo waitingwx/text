@@ -72,7 +72,7 @@ public class WakeUpActivity extends AppCompatActivity implements Istatus {
     private void stopRecog() {
         mIvw.stopListening();
         mStatus = STATUS_STOPPED;
-        btnStatus.setText(R.string.btn_statusa);
+        btnStatus.setText(R.string.btn_status_start);
     }
 
     private void startRecog() {
@@ -99,7 +99,7 @@ public class WakeUpActivity extends AppCompatActivity implements Istatus {
             // 启动唤醒
             mIvw.startListening(mWakeuperListener);
             mStatus = STATUS_READY;
-            btnStatus.setText(R.string.btn_statusb);
+            btnStatus.setText(R.string.btn_status_cancel);
         } else {
             showTip("唤醒未初始化");
         }
@@ -127,7 +127,7 @@ public class WakeUpActivity extends AppCompatActivity implements Istatus {
         public void onResult(WakeuperResult result) {
             Log.d(TAG, "onResult");
             if (!"1".equalsIgnoreCase(keep_alive)) {
-                setBtnText(R.string.btn_statusa);
+                setBtnText(R.string.btn_status_start);
             }
             try {
                 String text = result.getResultString();
@@ -157,7 +157,7 @@ public class WakeUpActivity extends AppCompatActivity implements Istatus {
         @Override
         public void onError(SpeechError error) {
             showTip(error.getPlainDescription(true));
-            setBtnText(R.string.btn_statusa);
+            setBtnText(R.string.btn_status_start);
         }
 
         @Override

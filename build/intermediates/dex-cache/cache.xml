@@ -3,120 +3,57 @@
 
     <item
         is-multidex="true"
-        jar="/Users/wx/.android/build-cache/d1b9936b5cf28c165261f80164fca95656a339b6/output/jars/classes.jar"
+        jar="D:\an_workspace\AllTestDemo\kdxfdemo\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
-        revision="26.0.1"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c5fda160e80b876027addd43ba612396e1a7b86c/classes.dex" />
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\an_workspace\AllTestDemo\kdxfdemo\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_aa60442ba1144abdf88f879061248a18f0988172\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/wx/.android/build-cache/4ffa8d0614b57e9b550d2478c7ef6145bf511e96/output/jars/classes.jar"
+        jar="D:\an_workspace\AllTestDemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_53c7e3d7303da7816a79543a69a798e07fa073f0/classes.dex" />
+        sha1="663736b079237f27ad3b3e789a14292c6c949ebc">
+        <dex dex="D:\an_workspace\AllTestDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_dcddb0d2be462bae9bab8b6fb15f4f73db90c4e7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/wx/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jar="D:\an_workspace\AllTestDemo\kdxfdemo\libs\Msc.jar"
         jumboMode="true"
         optimize="true"
-        revision="26.0.1"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.0-alpha1_3cfbc9377f95fc55e4a701e36b074b7f1c5806dd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/xfofficialdemo/libs/Msc.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
+        revision="25.0.2"
         sha1="d6fd5a65ae8ef3535dfbf3284ad4c1adb5a40e88">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/2/Msc_ce59a737716089e2472e7a8069f815df2e713c71/classes.dex" />
+        <dex dex="D:\an_workspace\AllTestDemo\kdxfdemo\build\intermediates\transforms\dex\debug\folders\1000\2\Msc_969378c20c7a897b52594ee5891de2ddb91ebcbf\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/wx/.android/build-cache/d9c2ec5a509b1abaacaedcc45f3523825adf70cd/output/jars/classes.jar"
+        jar="D:\an_workspace\AllTestDemo\kdxfdemo\libs\Sunflower.jar"
         jumboMode="true"
         optimize="true"
-        revision="26.0.1"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f96ee1b1c01bd59257f7a1caa52f8cffc4d8e0a9/classes.dex" />
+        revision="25.0.2"
+        sha1="dffa0220b64d2017db2517325926313c5f186d73">
+        <dex dex="D:\an_workspace\AllTestDemo\kdxfdemo\build\intermediates\transforms\dex\debug\folders\1000\2\Sunflower_c9e13c0f35e8f0939bf778621c7ed5a2b85c50ad\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/wx/.android/build-cache/efd7c730beb07212dd910a3a05da250f7a8d5f54/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b13ad3eca53b2718723f73160e37a0b8f1486018/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c6b99ca4d2db903927db71e46dfc6f510dfb17bf">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_07dbf6ac1065c4c0f4e9086db157660c64e34bf8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/.android/build-cache/1feac03c48621cd734df88e684003a08a94dab2f/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2efdfd81f90f0ac6ec24584863b63fa16637359e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="D:\an_workspace\AllTestDemo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_13b7670043a24205d1c86cfca27c19281a940f9c/classes.dex" />
+        <dex dex="D:\an_workspace\AllTestDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a9edae88483b888f863041fbdb8f0752c37298af\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/wx/.android/build-cache/445ff29fe4e705e8a77510734e47cb7e1db99ae5/output/jars/classes.jar"
+        jar="D:\an_workspace\AllTestDemo\kdxfdemo\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="26.0.1"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_57d2c6d976440a49655683e432e9beb9346b5fab/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/.android/build-cache/1d9a12db9650a5a0884a165973138398fc141299/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cbcc04fd15b9fb7394a9df20afebff99192b9d66/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/.android/build-cache/8d7ecc30c84f7d942c8c5c8ee5102b3edf29347b/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_44c4dff23138d3500dbc65fecb0e77231312cbd6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/wx/.android/build-cache/a42aceeb29af10bbb3824174680b71e9815af338/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="/Users/wx/Public/gitclone/text/xfofficialdemo/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b509ddb8f63078e66c9b0b347f3ac1e9ac5171d3/classes.dex" />
+        revision="25.0.2"
+        sha1="88b489cfbc9a4f40c1fee778e3dbc1a39d87c651">
+        <dex dex="D:\an_workspace\AllTestDemo\kdxfdemo\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ac67752501565bc86e10d4ffe89ab9f9b521e865\classes.dex" />
     </item>
 
 </items>
